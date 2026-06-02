@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -15,11 +16,15 @@ public class Controller {
     public String greeting() {
         return "HI SHAHD";
     }
+    @GetMapping("GREET")
+    public String GREETING ( @RequestParam String INPUT){
+        return " hi "+ INPUT;
+    }
 
     @GetMapping("bookes/names")
     public List<String> BOOKES() {
         return Arrays.asList(
-                "Motivation",
+                "INTRO TO GAVA",
                 "RemoteSensing",
                 "GEOAI",
                 "ADVANCE GIS"
@@ -36,4 +41,5 @@ public class Controller {
                 new Book("SPATIAL ANALYSIS", "5")
         );
     }
+
 }
