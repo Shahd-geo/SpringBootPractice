@@ -26,6 +26,10 @@ public class LibraryController {
     @GetMapping("/addRelationalBook")
     public String addRelationalBook(@RequestParam int id,  @RequestParam String name, @RequestParam int authorid) {
         boolean authorExsit= false;
+        for (Author a : authorList){
+
+
+        }
 
     }
     {
