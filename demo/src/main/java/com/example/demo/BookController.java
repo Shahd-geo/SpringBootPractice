@@ -14,7 +14,7 @@ public class BookController {
     private static List<Book> bookshelf = new ArrayList<>();
 
 
-    @GetMapping("/add-book")
+    @GetMapping("/addBook")
     public String ADDBOOK(@RequestParam String name, int id,int authorId) {
         Book newbook = new Book(name, id,authorId);
 
@@ -25,13 +25,13 @@ public class BookController {
         return "Book added successfully! ";
     }
 
-    @GetMapping("/all-books")
+    @GetMapping("/allBooks")
     public List<Book> ALLBOOKS() {
         return bookshelf;
 
     }
 
-    @GetMapping("/find-by-id")
+    @GetMapping("/findById")
     public Book searchid(@RequestParam int id) {
         for (Book B : bookshelf) {
             if (B.getId() == id) {
@@ -41,7 +41,7 @@ public class BookController {
         return null;
     }
 
-    @GetMapping("/find-by-name")
+    @GetMapping("/findByName")
     public Book searchByName(@RequestParam String name) {
         for (Book B : bookshelf) {
             if (B.getBookName().equalsIgnoreCase(name)) {
@@ -52,7 +52,7 @@ public class BookController {
 
     }
 
-    @GetMapping("/search-msg")
+    @GetMapping("/searchMsg")
     public String searchMassag(@RequestParam int id) {
         for (Book b : bookshelf) {
             if (b.getId() == id) {
@@ -66,7 +66,7 @@ public class BookController {
 
     // extra practice of handling with not found book name
     //search by name and return massage that include book id
-    @GetMapping ("/search-by-name-msg")
+    @GetMapping ("/searchByNameMsg")
     public String searchBookByNameWithMessage(@RequestParam String name) {
       for (Book B : bookshelf){
           if (B.getBookName().equalsIgnoreCase(name)){
