@@ -70,7 +70,7 @@ public class BookController {
     public String searchBookByNameWithMessage(@RequestParam String name) {
       for (Book B : bookshelf){
           if (B.getBookName().equalsIgnoreCase(name)){
-              return "Found: ID = " + B.getId() + ", Name = " + B.getBookName();
+              return "Found: ID = " + B.getId() ;
           }
       }
         return "Sorry, no book with the name \"" + name + "\" was found.";
