@@ -46,6 +46,9 @@ public class LibraryController {
         }
     }
     @GetMapping("/authorReeport")
+    public String authorReeport(String  authorName ){
+
+    }
 
 
 }
