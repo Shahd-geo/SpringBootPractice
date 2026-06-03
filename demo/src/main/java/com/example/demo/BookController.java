@@ -15,8 +15,8 @@ public class BookController {
 
 
     @GetMapping("/add-book")
-    public String ADDBOOK(@RequestParam String name, int id) {
-        Book newbook = new Book(name, id);
+    public String ADDBOOK(@RequestParam String name, int id,int authorId) {
+        Book newbook = new Book(name, id,authorId);
 
         // Add the book to the bookshelf
         bookshelf.add(newbook);
