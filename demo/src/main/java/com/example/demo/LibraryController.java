@@ -45,7 +45,7 @@ public class LibraryController {
             return "Error: Author with ID " + authorId + " does not exist. Book not saved.";
         }
     }
-    @GetMapping("/authorReeport")
+    @GetMapping("/authorReport")
     public String authorReeport(@RequestParam String authorName ){
         Author foundAuthor = null;
         for (Author a : authorList){
