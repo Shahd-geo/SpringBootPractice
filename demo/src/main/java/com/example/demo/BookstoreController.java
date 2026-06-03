@@ -40,4 +40,9 @@ public class BookstoreController {
         //if loop finish without find book
         return "Sorry, the bookstore does not carry a book with ID " + id + ".";
     }
+    @GetMapping("/ lowStockReport")
+    public  String lowStockReport(@RequestParam int thershold){
+        String report;
+        boolean foundlowStock=false;
+    }
 }
