@@ -63,6 +63,10 @@ public class BookController {
         // If not found, return a fallback message
         return "Sorry, that book ID is not available.";
     }
+
+    // extra practice of handling with not found book name
+    //search by name and return massage that include book id
+    @GetMapping
 }
 
 
