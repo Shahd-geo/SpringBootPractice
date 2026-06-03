@@ -23,5 +23,9 @@ public class LibraryController {
     public List<Author> getAllAuthors() {
         return authorList;
     }
+    @GetMapping("/addRelationalBook")
+    public String addRelationalBook(@RequestParam int id,  @RequestParam String name, @RequestParam String biography) {
+
+    }
 }
 
