@@ -15,8 +15,8 @@ public class BookController {
 
 
     @GetMapping("/add-book")
-    public String ADDBOOK(@RequestParam String name,int id){
-        Book newbook=new Book(name, id);
+    public String ADDBOOK(@RequestParam String name, int id) {
+        Book newbook = new Book(name, id);
 
         // Add the book to the bookshelf
         bookshelf.add(newbook);
@@ -24,16 +24,17 @@ public class BookController {
         // Return confirmation message
         return "Book added successfully! ";
     }
-    @GetMapping ("/all-books")
-    public List<Book> ALLBOOKS( ){
+
+    @GetMapping("/all-books")
+    public List<Book> ALLBOOKS() {
         return bookshelf;
 
     }
 
-    @GetMapping ("/find-by-id")
-    public Book searchid(@RequestParam int id ){
-        for (Book B : bookshelf){
-            if (B.getId()==id){
+    @GetMapping("/find-by-id")
+    public Book searchid(@RequestParam int id) {
+        for (Book B : bookshelf) {
+            if (B.getId() == id) {
                 return B;
             }
         }
@@ -41,9 +42,9 @@ public class BookController {
     }
 
     @GetMapping("/find-by-name")
-    public Book searchByName (@RequestParam String name){
-        for (Book B : bookshelf){
-            if (B.getBookName().equalsIgnoreCase(name)){
+    public Book searchByName(@RequestParam String name) {
+        for (Book B : bookshelf) {
+            if (B.getBookName().equalsIgnoreCase(name)) {
                 return B;
             }
         }
@@ -51,6 +52,19 @@ public class BookController {
 
     }
 
-
-
+    @GetMapping("/search-msg")
+    public String searchMassag(@RequestParam int id) {
+        for (Book b : bookshelf) {
+            if (b.getId() == id) {
+                // If found, return a friendly message
+                return "Found: " + b.getBookName();
+            }
+        }
+        // If not found, return a fallback message
+        return "Sorry, that book ID is not available.";
+    }
 }
+
+
+
+
