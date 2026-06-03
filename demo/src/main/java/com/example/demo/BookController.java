@@ -15,7 +15,7 @@ public class BookController {
 
 
     @GetMapping("/add-book")
-    public String ADDBOOK(@RequestParam int id,String name){
+    public String ADDBOOK(@RequestParam String name,int id){
         Book newbook=new Book(name, id);
 
         // Add the book to the bookshelf
@@ -23,6 +23,11 @@ public class BookController {
 
         // Return confirmation message
         return "Book added successfully! ";
+    }
+    @GetMapping ("/all-books")
+    public List<Book> ALLBOOKS( ){
+        return bookshelf;
+
     }
 
 
