@@ -40,6 +40,17 @@ public class BookController {
         return null;
     }
 
+    @GetMapping("/find-by-name")
+    public Book searchByName (@RequestParam String name){
+        for (Book B : bookshelf){
+            if (B.getBookName().equalsIgnoreCase(name)){
+                return B;
+            }
+        }
+        return null;
+
+    }
+
 
 
 }
