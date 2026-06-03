@@ -22,6 +22,19 @@ public class BookstoreController {
                 ", Price: " + price +
                 ", Stock Count: " + stockCount;
     }
+    @GetMapping ("/checkSock")
+    public String checkSock(@RequestParam int id ){
+        for (InventoryBook i : bookstore){
+            if (i.getBookID()==id){
+                if ((i.getStockCount()> 0)){
+                    return "Available: " + i.getTitle() +
+                            " (Price: " + i.getPrice() +
+                            " Stock: " + i.getStockCount() + ")";
+
+                }
+            }
+        }
+    }
 
 
 
