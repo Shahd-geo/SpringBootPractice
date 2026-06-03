@@ -54,5 +54,13 @@ public class LibraryController {
                 break;
             }
         }
-    }
+        // Step 2: Handle "not found" case
+        if (foundAuthor == null) {
+            return "Error: Author with name \"" + authorName + "\" not found.";
+        }
+        // Step 3: Build the report
+        String report = "Author Report\n" +
+                "ID: " + foundAuthor.getId() + "\n" +
+                "Name: " + foundAuthor.getName() + "\n" +
+                "Biography: " + foundAuthor.getBiography() + "\n";    }
 }
