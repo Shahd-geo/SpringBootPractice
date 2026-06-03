@@ -18,8 +18,12 @@ public class BookController {
     public String ADDBOOK(@RequestParam int id,String name){
         Book newbook=new Book(name, id);
 
+        // Add the book to the bookshelf
+        bookshelf.add(newbook);
 
-
+        // Return confirmation message
+        return "Book added successfully! ";
     }
+
 
 }
