@@ -46,10 +46,13 @@ public class LibraryController {
         }
     }
     @GetMapping("/authorReeport")
-    public String authorReeport(String  authorName ){
-
+    public String authorReeport(@RequestParam String authorName ){
+        Author foundAuthor = null;
+        for (Author a : authorList){
+                if (a.getName().equalsIgnoreCase(authorName)){
+                foundAuthor = a;
+                break;
+            }
+        }
     }
-
-
 }
-
