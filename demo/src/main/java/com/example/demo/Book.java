@@ -27,4 +27,13 @@ public class Book {
         this.id = id;
     }
 
+    public int getAuthorId() {
+        return authorId;
+    }
+
+    public void setAuthorId(int authorId) {
+        this.authorId = authorId;
+    }
 }
+
+
