@@ -50,9 +50,10 @@ public class BookstoreController {
                         " | Stock: " + B.getStockCount() + "\n";
                 foundLowStock = true;
             }
+            if (!foundLowStock){
+                return "All good! No books currently need reordering.";
+            }
         }
-
-        }
-
+        return "Low Stock Report (Threshold: " + thershold + ")\n" + report;
     }
 }
