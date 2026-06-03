@@ -42,7 +42,17 @@ public class BookstoreController {
     }
     @GetMapping("/ lowStockReport")
     public  String lowStockReport(@RequestParam int thershold){
-        String report;
+        String report = "";
         boolean foundLowStock = false;
+        for (InventoryBook B :bookstore){
+            if (B.getStockCount()<=thershold ){
+                report += "Title: " + B.getTitle() +
+                        " | Stock: " + B.getStockCount() + "\n";
+                foundLowStock = true;
+            }
+        }
+
+        }
+
     }
 }
