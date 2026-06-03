@@ -21,16 +21,6 @@ public class Controller {
         return " hi "+ INPUT;
     }
 
-    @GetMapping("bookes/names")
-    public List<String> BOOKES() {
-        return Arrays.asList(
-                "INTRO TO GAVA",
-                "RemoteSensing",
-                "GEOAI",
-                "ADVANCE GIS"
-        );
-    }
-
     @GetMapping("BOOKES/DATA")
     public List<Book> BOOKESDATA() {
         return Arrays.asList(

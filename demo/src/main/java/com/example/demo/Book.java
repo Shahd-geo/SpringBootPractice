@@ -1,8 +1,8 @@
 package com.example.demo;
 
 public class Book {
-    String BookName;
-    String id ;
+    private String BookName;
+    private int id ;
 
     public String getBookName() {
         return BookName;
