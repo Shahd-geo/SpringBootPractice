@@ -3,10 +3,12 @@ package com.example.demo;
 public class Book {
     private String BookName;
     private int id;
+    private int authorId;
 
-    public Book(String bookName, int id) {
+    public Book(String bookName, int id, int authorId) {
         BookName = bookName;
         this.id = id;
+        this.authorId = authorId;
     }
 
     public String getBookName() {
@@ -24,4 +26,5 @@ public class Book {
     public void setId(int id) {
         this.id = id;
     }
+
 }
