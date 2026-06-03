@@ -43,6 +43,6 @@ public class BookstoreController {
     @GetMapping("/ lowStockReport")
     public  String lowStockReport(@RequestParam int thershold){
         String report;
-        boolean foundlowStock=false;
+        boolean foundLowStock = false;
     }
 }
