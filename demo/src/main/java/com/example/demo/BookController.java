@@ -30,8 +30,12 @@ public class BookController {
 
     }
     @GetMapping ("/find-by-id")
-    public int searchid(@RequestParam int id ){
-        for ()
+    public Book searchid(@RequestParam int id ){
+        for (Book B : bookshelf){
+            if (B.getId()==id){
+                return B;
+            }
+        }
     }
 
 
