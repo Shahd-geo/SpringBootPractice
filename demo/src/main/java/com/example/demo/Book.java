@@ -9,4 +9,19 @@ public class Book {
         this.id = id;
     }
 
+    public String getBookName() {
+        return BookName;
+    }
+
+    public void setBookName(String bookName) {
+        BookName = bookName;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
