@@ -5,4 +5,9 @@ public class Author {
     private  String name;
     private String biography;
 
+    public Author(int id, String name, String biography) {
+        this.id = id;
+        this.name = name;
+        this.biography = biography;
+    }
 }
