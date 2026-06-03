@@ -14,7 +14,7 @@ public class BookstoreController {
 
 
     @GetMapping("/addInventoryBook")
-    public String  addInventoryBook(@RequestParam int id, @RequestParam String title, @RequestParam double price, int stockCount) {
+    public String addInventoryBook(@RequestParam int id, @RequestParam String title, @RequestParam double price, int stockCount) {
         InventoryBook newBook = new InventoryBook(id, title, price, stockCount);
         bookstore.add(newBook);
         return "Book added successfully! ID: " + id +
@@ -22,26 +22,22 @@ public class BookstoreController {
                 ", Price: " + price +
                 ", Stock Count: " + stockCount;
     }
-    @GetMapping ("/checkSock")
-    public String checkSock(@RequestParam int id ){
-        for (InventoryBook i : bookstore){
-            if (i.getBookID()==id){
-                if ((i.getStockCount()> 0)){
+
+    @GetMapping("/checkStock")
+    public String checkSock(@RequestParam int id) {
+        for (InventoryBook i : bookstore) {
+            if (i.getBookID() == id) {
+                if ((i.getStockCount() > 0)) {
                     return "Available: " + i.getTitle() +
                             " (Price: " + i.getPrice() +
                             " Stock: " + i.getStockCount() + ")";
 
-                }
-                else {
-                    return  "Sorry, " + i.getTitle() + " is currently sold out.";
-                }
+                } else {
+                    return "Sorry, " + i.getTitle() + " is currently sold out.";
                 }
             }
+        }
         //if loop finish without find book
-     return "Sorry, the bookstore does not carry a book with ID " + id + ".";
-}
-
-
-
-
+        return "Sorry, the bookstore does not carry a book with ID " + id + ".";
+    }
 }
