@@ -66,7 +66,15 @@ public class BookController {
 
     // extra practice of handling with not found book name
     //search by name and return massage that include book id
-    @GetMapping
+    @GetMapping ("/search-by-name-msg")
+    public String searchBookByNameWithMessage(@RequestParam String name) {
+      for (Book B : bookshelf){
+          if (B.getBookName().equalsIgnoreCase(name)){
+              return "Found: ID = " + B.getId() + ", Name = " + B.getBookName();
+          }
+      }
+        return "Sorry, no book with the name \"" + name + "\" was found.";
+    }
 }
 
 
