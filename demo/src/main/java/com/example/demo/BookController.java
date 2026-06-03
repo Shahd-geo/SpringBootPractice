@@ -29,6 +29,10 @@ public class BookController {
         return bookshelf;
 
     }
+    @GetMapping ("/find-by-id")
+    public int searchid(@RequestParam int id ){
+        for ()
+    }
 
 
 }
