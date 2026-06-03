@@ -32,6 +32,10 @@ public class BookstoreController {
                             " Stock: " + i.getStockCount() + ")";
 
                 }
+                else {
+                    return  "Sorry, " + i.getTitle() + " is currently sold out.";
+                }
+                }
             }
         }
     }
