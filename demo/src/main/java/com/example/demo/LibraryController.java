@@ -74,7 +74,7 @@ public class LibraryController {
         if (books.isEmpty()) {
             report += "Books Written: None";
         } else {
-            // Remove trailing comma and space
+            // Remove trailing comma and space (MAKE CODE CLEAN)
             books = books.substring(0, books.length() - 2);
             report += "Books Written: " + books;
         }
