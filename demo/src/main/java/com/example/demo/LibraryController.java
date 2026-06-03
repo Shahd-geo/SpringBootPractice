@@ -24,22 +24,30 @@ public class LibraryController {
         return authorList;
     }
     @GetMapping("/addRelationalBook")
-    public String addRelationalBook(@RequestParam int id,  @RequestParam String name, @RequestParam int authorid) {
+    public String addRelationalBook(@RequestParam int id,  @RequestParam String name, @RequestParam int authorId) {
         boolean authorExsit= false;
         for (Author a : authorList) {
-            if (a.getId() == authorid) {
+            if (a.getId() == authorId) {
                 authorExsit = true;
                 break;
             }
         }
 
-
+        if (authorExsit) {
+            // Create and save the book only if the author exists
+            Book newBook = new Book(name, id, authorId);
+            bookList.add(newBook);
+            return "Book added successfully! Name: " + name +
+                    ", id: " + id +
+                    ", Author ID: " + authorId;
+        } else {
+            // Reject the book if the author doesn’t exist
+            return "Error: Author with ID " + authorId + " does not exist. Book not saved.";
         }
-
     }
-    {
 
 
     }
+
 }
 
