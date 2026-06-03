@@ -40,12 +40,12 @@ public class BookstoreController {
         //if loop finish without find book
         return "Sorry, the bookstore does not carry a book with ID " + id + ".";
     }
-    @GetMapping("/ lowStockReport")
-    public  String lowStockReport(@RequestParam int thershold){
+    @GetMapping("/lowStockReport")
+    public  String lowStockReport(@RequestParam int threshold){
         String report = "";
         boolean foundLowStock = false;
         for (InventoryBook B :bookstore){
-            if (B.getStockCount()<=thershold ){
+            if (B.getStockCount()<=threshold ){
                 report += "Title: " + B.getTitle() +
                         " | Stock: " + B.getStockCount() + "\n";
                 foundLowStock = true;
@@ -54,6 +54,6 @@ public class BookstoreController {
                 return "All good! No books currently need reordering.";
             }
         }
-        return "Low Stock Report (Threshold: " + thershold + ")\n" + report;
+        return "Low Stock Report (Threshold: " + threshold + ")\n" + report;
     }
 }
