@@ -62,5 +62,22 @@ public class LibraryController {
         String report = "Author Report\n" +
                 "ID: " + foundAuthor.getId() + "\n" +
                 "Name: " + foundAuthor.getName() + "\n" +
-                "Biography: " + foundAuthor.getBiography() + "\n";    }
+                "Biography: " + foundAuthor.getBiography() + "\n";
+        //Step 4: Collect books
+        String books = "";
+        for (Book b : bookList) {
+            if (b.getAuthorId() == foundAuthor.getId()) {
+                books += b.getBookName() + ", ";
+            }
+        }
+
+        if (books.isEmpty()) {
+            report += "Books Written: None";
+        } else {
+            // Remove trailing comma and space
+            books = books.substring(0, books.length() - 2);
+            report += "Books Written: " + books;
+        }
+        return report;
+    }
 }
